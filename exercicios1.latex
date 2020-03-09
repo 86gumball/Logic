@@ -1,0 +1,207 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage[md]{titlesec}
+\usepackage[shortlabels]{enumitem}
+
+\title{Exercícios Lógica 2019/2020}
+\author{Rúben Lucas}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}[label* = \arabic*.]
+    
+    \item {\large\textbf{Sintaxe do Cálculo Proposicional}}
+
+
+        \begin{enumerate}[label* = \arabic*.]
+            \item De entre as seguintes palavras sobre o alfabeto do Cálculo Proposicional, indique, justificando, aquelas que pertencem ao conjunto \( \mathcal{F}^{CP} \) 
+                \begin{enumerate}[a)]
+                    \item $ (\neg (p_1 \vee p_2)) $ 
+                        \begin{align*}
+                            p_1 \in \mathcal{F}^{CP}& \text{ por b)} \\
+                            p_2 \in \mathcal{F}^{CP}& \text{ por b)} \\
+                            (p_1 \vee p_2) \in \mathcal{F}^{CP}& \text{ por (1), (2) e d)} \\
+                            (\neg (p1_ \vee p_2)) \in \mathcal{F}^{CP}& \text{ por (3) e c)}
+                        \end{align*}
+                    \item $ ((p_0\land \neg p_0)\to \bot ) $
+                        \begin{align*}
+                            p_0 \in \mathcal{F}^{CP}& \text{ por b)} \\
+                            \neg p_0 \in \mathcal{F}^{CP}& \text{ por c)} \\
+                            p_0 \land \neg p_0 \notin \mathcal{F}^{CP}& \text{ porque } \neg p_0 \text{ devia estar entre ()}
+                        \end{align*}
+                        Como uma das subfórmulas não pertence a $ \mathcal{F}^{CP} $ então $ ((p_0 \land \neg p_0) \to \bot) \notin \mathcal{F}^{CP} $
+                    \item $ ((\neg p_5)\to (\neg p_6)) $
+                        \begin{align*}
+                            p_5 \in \mathcal{F}^{CP}& \text{ por b)} \\
+                            (\neg p_5) \in \mathcal{F}^{CP}& \text{ por (1) e c)} \\
+                            p_6 \in \mathcal{F}^{CP}& \text{ por b)} \\
+                            (\neg p_6) \in \mathcal{F}^{CP}& \text{ por (3) e c)} \\
+                            ((\neg p_5) \to (\neg p_6)) \in \mathcal{F}^{CP}& \text{ por (2), (3) e d)}
+                        \end{align*}
+                    \item $ (\bot ) $
+                        \begin{align*}
+                            \bot \in \mathcal{F}^{CP}& \text{ por a)} \\
+                            (\bot) \notin \mathcal{F}^{CP}& \text{ Não existe regra}
+                        \end{align*}
+                    \item $ ((p_3\land p_1)\vee ( $
+                        \begin{align*}
+                            (\, \notin \mathcal{F}^{CP}& \text{ Não existe regra} 
+                        \end{align*}
+                        Como uma das subfórmulas não pertence a $ \mathcal{F}^{CP} $ então $ ((p_3 \land p_1) \vee (\, \notin \mathcal{F}^{CP} $
+                    \item $ (((p_9\to ((p_3\vee (\neg p_8))\land p_{12}))\leftrightarrow (\neg p_4))\to (p_7\vee \bot ))) $
+                        \begin{align*}
+                            p_3 \in \mathcal{F}^{CP}& \text{ por b)} \\
+                            p_4 \in \mathcal{F}^{CP}& \text{ por b)} \\
+                            p_7 \in \mathcal{F}^{CP}& \text{ por b)} \\
+                            p_8 \in \mathcal{F}^{CP}& \text{ por b)} \\
+                            p_9 \in \mathcal{F}^{CP}& \text{ por b)} \\
+                            p_12 \in \mathcal{F}^{CP}& \text{ por b)} \\
+                            \bot \in \mathcal{F}^{CP}& \text{ por a)} \\
+                            (\neg p_4 ) \in \mathcal{F}^{CP}& \text{ por c) e (2)} \\
+                            (\neg p_8 ) \in \mathcal{F}^{CP}& \text{ por c) e (4)} \\
+                            (p_3 \vee (\neg p_8 )) \in \mathcal{F}^{CP}& \text{ por d), (8) e (9)}  \\
+                            ((p_3 \vee (\neg p_8 )) \land p_{12} ) \in \mathcal{F}^{CP}& \text{ por d), (10) e (6)} \\
+                            (((p_3 \vee (\neg p_8 )) \land p_{12} ) \leftrightarrow (\neg p_4 )) \in \mathcal{F}^{CP}& \text{ por d), (11) e (7)} \\
+                            (p_7 \vee \bot) \in \mathcal{F}^{CP}& \text{ por d), (7) e (3)} \\
+                            ((((p_3 \vee (\neg p_8 )) \land p_{12} ) \to (\neg p_4 )) \to (p_7 \vee \bot)) \in \mathcal{F}^{CP}& \text{ por d), (11) e (7)}
+                        \end{align*}
+                \end{enumerate}
+
+            \item Para cada uma das seguintes fórmulas $ \varphi $ do Cálculo Proposicional:
+                \begin{enumerate}[a)]
+                    \item Calcule $ \varphi [p_2/p_0],\varphi [p_0\land p_1/p_1] $ e $\varphi [p_{2016}/p_{2015}] $ 
+                        \begin{enumerate}[i)]
+                            \item $ \varphi = p_{2015} $
+                                \begin{align*}
+                                    p_{2015}[p_2/p_0] &= p_{2015} \\
+                                    p_{2015}[p_0 \land p_1/p_1] &= p_{2015} \\
+                                    p_{2015}[p_{2016}/p_{2015}] &= p_{2016}
+                                \end{align*}
+                            \item $ \varphi = \neg \bot \vee \bot $
+                                \begin{align*}
+                                    \neg \bot \vee \bot[p_2/p_0] &= \neg \bot \vee \bot \\
+                                    \neg \bot \vee \bot[p_0 \land p_1/p_1] &= \neg \bot \vee \bot \\
+                                    \neg \bot \vee \bot[p_{2016}/p_{2015}] &= \neg \bot \vee \bot
+                                \end{align*}
+                            \item $ \varphi = p_0 \to (\neg p_0 \to \neg p_1) $
+                                \begin{align*}
+                                    p_0 \to (\neg p_0 \to \neg p_1)[p_2/p_0] &= p_2 \to (\neg p_2 \to \neg p_1) \\
+                                    p_0 \to (\neg p_0 \to \neg p_1)[p_0 \land p_1/p_1] &= p_0 \to (\neg p_0 \to \neg (p_0 \land p_1)) \\
+                                    p_0 \to (\neg p_0 \to \neg p_1)[p_{2016}/p_{2015}] &= p_0 \to (\neg p_0 \to \neg p_1)
+                                \end{align*}
+                        \end{enumerate}
+                    \item Indique o conjunto das suas subfórmulas
+                        \begin{enumerate}[i)]
+                            \item $ \varphi = p_{2015} $
+                                \begin{equation*}
+                                    \{p_{2015}\}
+                                \end{equation*}
+                            \item $ \varphi = \neg \bot \vee \bot $
+                                \begin{equation*}
+                                    \{\bot\} \cup \{(\neg \bot)\} \cup \{((\neg \bot) \vee \bot)\}
+                                \end{equation*}
+                            \item $ \varphi = p_0 \to (\neg p_0 \to \neg p_1) $
+                                \begin{equation*}
+                                    \{p_0\} \cup \{(\neg p_0)\} \cup \{p_1\} \cup \{(\neg p_1)\} \cup \{((\neg p_0) \to (\neg p_1))\} \cup \{(p_0 \to ((\neg p_0) \to (\neg p_1)))
+                                \end{equation*}
+                        \end{enumerate}
+                            
+                \end{enumerate}
+                
+            \item Defina por recursão estrutural as seguintes funções (na alínea c) $ BIN={\land ,\vee ,\to ,\Leftrightarrow } $):
+                \begin{enumerate}[a)]
+                    \item $ p : \mathcal{F}^{CP} \to \mathbb{N}_0 $ tal que $ p(\varphi) = $ número de ocorrências de parêntesis em $ \varphi $.
+                        \begin{align*}
+                            &p: \mathcal{F}^{CP} \to \mathbb{N}_0 \\
+                            &p(p) = 0 \\
+                            &p(\bot) = 0 \\
+                            &p(\neg \varphi) = 1 + p(\varphi) \\
+                            &p(\varphi \square \psi) = 1 + p(\varphi) + p(\psi)
+                        \end{align*}
+                    \item $ v : \mathcal{F}^{CP} \to \mathbb{N}_0 $ tal que $ v(\varphi) = $ número de ocorrências de vars. proposicionais em $ \varphi $.
+                        \begin{align*}
+                            &v: \mathcal{F}^{CP} \to \mathbb{N}_0 \\
+                            &v(p) = 1 \\
+                            &v(\bot) = 0 \\
+                            &v(\neg \varphi) = v(\varphi) \\
+                            &v(\varphi \square \psi) = v(\varphi) + v(\psi)
+                        \end{align*}
+                    \item $ b : \mathcal{F}^{CP} \to \mathcal{P}(BIN) $ tal que $ b(\varphi) = \{\square \in BIN : \square \text{ ocorre em } \varphi\} $. 
+                        \begin{align*}
+                            &b: \mathcal{F}^{CP} \to \mathcal{P}(BIN)\\
+                            &??
+                        \end{align*}
+                    \item $ \_[\bot/p_7] : \mathcal{F}^{CP} \to \mathcal{F}^{CP} $
+                        \begin{align*}
+                            &\_[\bot/p_7] : \mathcal{F}^{CP} \to \mathcal{F}^{CP}  \\
+                            &p_n[\bot/p_7] = p_n, n \in \mathbb{N}_0 \backslash \{7\} \\
+                            &p_7[\bot/p_7] = \bot \\
+                            &(\neg p_n)[\bot/p_7] = \neg (p_n[\bot/p_7]) \\
+                            &(\varphi \square \psi)[\bot/p_7] = \varphi[\bot/p_7] \square \psi[\bot/p_7]
+                        \end{align*}
+                \end{enumerate}
+                
+            \item Considere de novo as funções definidas no exercício anterior.  Prove, por indução estrutural, que, para todo $ \varphi \in \mathcal{F}^{CP} $:
+                \begin{enumerate}[a)]
+                    \item $ v(\varphi) \geq \#var(\varphi)$
+                    \item $ p(\varphi) \geq \#b(\varphi) $
+                    \item $ v(\varphi) \geq v(\varphi[\bot/p_7]) $
+                    \item $ b(\varphi) = b(\varphi[\bot/p_7]) $
+                    \item se $ b(\varphi) \neq \emptyset $ então $ p(\varphi) > 0 $
+                    \item se $ p_7 \notin var(\varphi) $ então $ \varphi[\bot/p_7] = \varphi $
+                \end{enumerate}
+                
+            \item Seja $ \varphi \in \mathcal{F}^{CP} $ . O tamanho de $ \varphi $ ,  denotado  por $ |\varphi | $, define-se  por  recursão  do  seguinte modo:
+                \begin{enumerate}[i)]
+                    \item $ |p| = 1 $, para cada variável proposicional $ p $;
+                    \item $ |\bot| = 1 $
+                    \item $ |\neg \varphi| = 1 + |\varphi| $
+                    \item $ |\varphi \square \psi | = 1 + |\varphi| + |\psi| $
+                \end{enumerate}
+
+                \begin{enumerate}[a)]
+                    \item Qual das fórmulas $ \neg \neg \neg p_0 $ ou $ (p_1 \land p_2) \vee (p_3 \land p_4) $ tem maior tamanho?
+                        \begin{align*}
+                            &|\neg \neg \neg p_0| && \\
+                            =& 1 + |\neg \neg p_0| &&\text{por iii)}\\
+                            =& 1 + 1 + |\neg p_0| &&\text{por iii)} \\
+                            =& 1 + 1 + 1 + |p_0| &&\text{por iii)} \\
+                            =& 1 + 1 + 1 + 1 &&\text{por i)} \\
+                            =& 4
+                        \end{align*}
+                        \begin{align*}
+                            &|(p_1 \land p_2) \vee (p_3 \land p_4)| &&\text{something} \\
+                            =& 1 + |p_1 \land p_2| + |p_3 \land p_4| &&\text{por iv) (x2)} \\
+                            =& 1 + 1 + |p_1| + |p_2| + 1 |p_3| + |p_4| &&\text{por iv) (x2)} \\
+                            =& 3 + 1 + 1 + 1 + 1 &&\text{por i) (x2)} \\
+                            =& 7
+                        \end{align*}
+                        Logo $ (p_1 \land p_2) \vee (p_3 \land p_4) $ tem maior tamanho.
+                    \item Dê exemplo de fórmulas de $ \varphi $ e $ \psi $, com 3 subfórmulas, tais que $ |\varphi| = 3 $ e $ |\psi| > 3 $.
+                        \begin{align*}
+                            \varphi &= \neg \neg p_0 \\
+                            \psi &= \text{??}
+                        \end{align*}
+                    \item Mostre que, para todo $ \varphi \in \mathcal{F}^{CP} $, $ |\varphi| \geq \#subf(\varphi)$.
+                \end{enumerate}
+
+            \item Seja $ \varphi \in \mathcal{F}^{CP} $ . A complexidade lógica de $ \varphi $, denotada por $ cl(\varphi ) $, define-se por recursão do seguinte modo:
+
+        \end{enumerate}
+        
+
+    \item {\large\textbf{Semântica do Cálculo Proposicional}}
+
+
+    \item {\large\textbf{Dedução Natural para o Cálculo Proposicional}}
+
+\end{enumerate}
+
+\end{document}
+
+%De entre as seguintes palavras sobre o alfabeto do Cálculo Proposicional, indique, justificando, aquelas
+%        que pertencem ao conjunto \( \mathcal{F}^{CP} \)
